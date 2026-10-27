@@ -11,8 +11,11 @@
 
 ## Capturas
 ![Login](capturas/01-login.png)
-![Registro](capturas/02-registro.png)
+![Principal](capturas/03-principal.png)
+![Sin conexión](capturas/05-sin-conexion.png)
+![Sincronizado](capturas/06-sincronizado.png)
 
 ## Estado
-Funciona y probado: login, registro con validaciones, rutas protegidas con Stack.Protected y sesión persistente en SecureStore.
-Implementado sin alcanzar a probar por tiempo: CRUD local con SQLite y Drizzle, lista reactiva, totales, indicador de pendientes y sincronización con Supabase. Faltaron las capturas 03 a 07.
+Funciona: login, registro con validaciones, rutas protegidas con Stack.Protected, sesión persistente en SecureStore, CRUD local con SQLite y Drizzle (también sin conexión), lista reactiva con useLiveQuery, totales, indicador de pendientes y sincronización con Supabase (baja faltantes y sube pendientes con upsert por client_id).
+
+Faltaron por tiempo las capturas de registro, formulario y panel de Supabase.
