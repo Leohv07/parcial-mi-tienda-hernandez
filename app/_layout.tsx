@@ -1,17 +1,21 @@
 import { Stack } from 'expo-router';
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator, Text, View } from 'react-native';
+import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
+import migrations from '../drizzle/migrations';
+import { db } from '../db/client';
 import { AuthProvider, useAuth } from '../context/AuthContext';
+
+function Cargando() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center' }}>
+      <ActivityIndicator size="large" />
+    </View>
+  );
+}
 
 function RootNavigator() {
   const { session, loading } = useAuth();
-
-  if (loading) {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center' }}>
-        <ActivityIndicator size="large" />
-      </View>
-    );
-  }
+  if (loading) return <Cargando />;
 
   return (
     <Stack>
@@ -28,6 +32,17 @@ function RootNavigator() {
 }
 
 export default function RootLayout() {
+  const { success, error } = useMigrations(db, migrations);
+
+  if (error) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', padding: 20 }}>
+        <Text>Error en la migración: {error.message}</Text>
+      </View>
+    );
+  }
+  if (!success) return <Cargando />;
+
   return (
     <AuthProvider>
       <RootNavigator />
