@@ -1,7 +1,7 @@
 ﻿# Parcial: Mi Tienda
 
 **Estudiante:** Leonardo Hernández
-**Código:** 123456
+**Código:** 0182220036
 
 ## Cómo ejecutar
 1. Copiar .env.example como .env y llenar URL y publishable key de Supabase.
@@ -16,6 +16,6 @@
 ![Sincronizado](capturas/06-sincronizado.png)
 
 ## Estado
-Funciona: login, registro con validaciones, rutas protegidas con Stack.Protected, sesión persistente en SecureStore, CRUD local con SQLite y Drizzle (también sin conexión), lista reactiva con useLiveQuery, totales, indicador de 123456s y sincronización con Supabase (baja faltantes y sube 123456s con upsert por client_id).
+Funciona: login, registro con validaciones, rutas protegidas con Stack.Protected, sesión persistente en SecureStore, CRUD local con SQLite y Drizzle (también sin conexión), lista reactiva con useLiveQuery, totales, indicador de 0182220036s y sincronización con Supabase (baja faltantes y sube 0182220036s con upsert por client_id).
 
 Faltaron por tiempo las capturas de registro, formulario y panel de Supabase.
